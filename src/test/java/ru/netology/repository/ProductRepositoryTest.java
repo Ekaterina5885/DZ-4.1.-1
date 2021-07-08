@@ -44,15 +44,7 @@ public class ProductRepositoryTest {
     @Test
     public void shouldRemoveByIdNonexistentElement() {
 
-        try {
-            repository.removeById(8);
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        }
-
-        assertThrows(NotFoundException.class, () -> {
-            repository.removeById(8);
-        });
+        assertThrows(NotFoundException.class, () -> repository.removeById(8));
     }
 }
 
